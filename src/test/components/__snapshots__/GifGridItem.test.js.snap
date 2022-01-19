@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pruebas al componente GifGridItem Debe mostrar <GifGridItem /> correctamente 1`] = `
+<div
+  className="card animate__animated animate__fadeInLeftBig"
+>
+  <img />
+  <p />
+</div>
+`;
