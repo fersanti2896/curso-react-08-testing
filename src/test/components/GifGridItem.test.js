@@ -14,6 +14,28 @@ describe('Pruebas al componente GifGridItem', () => {
     });
 
     test('Debe mostrar <GifGridItem /> correctamente', () => {
-      expect(wrapper).toMatchSnapshot();
+        expect(wrapper).toMatchSnapshot();
     });
+
+    test('Debe tener un párrafo con el título', () => {
+        /* Haciendo referencia al párrafo */
+        const p = wrapper.find('p');
+
+        expect(p.text().trim()).toBe(title);
+    });
+
+    test('Debe tener una imagen con la url y alt de las props (propiedades)', () => {
+        const img = wrapper.find('img');
+        //   console.log(img.props());
+
+        expect(img.prop('src')).toBe(url);
+        expect(img.prop('alt')).toBe(title);
+    });
+    
+    test('Debe tener animate__fadeInLeftBig en el className del div', () => {
+      const div = wrapper.find('div');
+
+      expect(div.prop('className').includes('animate__fadeInLeftBig')).toBe(true)
+    });
+    
 });
