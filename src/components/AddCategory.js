@@ -14,7 +14,6 @@ export const AddCategory = ({setCategories}) => { /* Recibe a las categorias */
             setCategories(cat => [inputValue, ...cat]); /* Comunicacion entre componentes */
             setInputValue('');
         }
-        
     }
 
     return (
