@@ -44,9 +44,8 @@ describe('Pruebas en el componente AddCategory', () => {
         wrapper.find('form').simulate('submit', { preventDefault(){} });
         
         expect(setCategories).toHaveBeenCalled();
-        expect(setCategories).toHaveBeenCalled(1);
         expect(setCategories).toHaveBeenCalledWith(expect.any(Function));
-        
+
         expect(wrapper.find('input').prop('value')).toBe('');
     });
     
