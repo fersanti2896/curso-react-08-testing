@@ -5,9 +5,11 @@ import { AddCategory } from '../../components/AddCategory'
 
 describe('Pruebas en el componente AddCategory', () => {
     let wrapper;
-    const setCategories = () => {};
+    const setCategories = jest.fn();
 
+    /* Se inicializa todo, en este caso el wrapper */
     beforeEach(() => {
+        jest.clearAllMocks();
         wrapper = shallow(<AddCategory setCategories={setCategories}/>);
     });
 
@@ -27,4 +29,12 @@ describe('Pruebas en el componente AddCategory', () => {
 
         expect(wrapper.find('p').text().trim()).toBe(value);
     });
+
+    test('No debe postear la información con submit', () => {
+        const formulario = wrapper.find('form');
+        formulario.simulate('submit', { preventDefault(){} });
+
+        expect(setCategories).not.toHaveBeenCalled();
+    });
+    
 });

@@ -11,6 +11,8 @@ export const AddCategory = ({setCategories}) => { /* Recibe a las categorias */
 
     const handleSubmit = (e) => {
         e.preventDefault() /* Esto previene que se refresque la pagina */
+        console.log('handleSubmit', inputValue);
+
         if(inputValue.trim().length > 2) {
             setCategories(cat => [inputValue, ...cat]); /* Comunicacion entre componentes */
             setInputValue('');
